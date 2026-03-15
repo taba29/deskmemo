@@ -1,7 +1,11 @@
+import { useState } from "react"
 import { sampleMemos } from "./data/sampleMemos"
 
 function App() {
-  const firstMemo = sampleMemos[0]
+  const [selectedMemoId, setSelectedMemoId] = useState(sampleMemos[0].id)
+
+  const selectedMemo =
+    sampleMemos.find((memo) => memo.id === selectedMemoId) ?? sampleMemos[0]
 
   return (
     <div className="app">
@@ -10,7 +14,11 @@ function App() {
 
         <ul className="memo-list">
           {sampleMemos.map((memo) => (
-            <li key={memo.id} className="memo-item">
+            <li
+              key={memo.id}
+              className={`memo-item ${memo.id === selectedMemoId ? "active" : ""}`}
+              onClick={() => setSelectedMemoId(memo.id)}
+            >
               <h2>{memo.title}</h2>
               <p>{memo.content}</p>
             </li>
@@ -20,8 +28,8 @@ function App() {
 
       <main className="content">
         <div className="preview-box">
-          <h2 className="preview-title">{firstMemo.title}</h2>
-          <p>{firstMemo.content}</p>
+          <h2 className="preview-title">{selectedMemo.title}</h2>
+          <p>{selectedMemo.content}</p>
         </div>
       </main>
     </div>

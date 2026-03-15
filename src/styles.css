@@ -75,3 +75,14 @@ body {
   border-radius: 12px;
   padding: 20px;
 }
+
+
+.memo-item {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.memo-item.active {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
