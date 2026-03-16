@@ -42,6 +42,16 @@ function App() {
     setSelectedMemoId(newMemo.id)
   }
 
+  const handleDeleteMemo = () => {
+  const next = memos.filter((memo) => memo.id !== selectedMemoId)
+
+  setMemos(next)
+
+  if (next.length > 0) {
+    setSelectedMemoId(next[0].id)
+  }
+}
+
   if (!selectedMemo) {
     return <div>メモがありません</div>
   }
@@ -72,12 +82,20 @@ function App() {
 
       <main className="content">
         <div className="preview-box">
+         <div className="editor-header">
           <input
             className="title-input"
             value={selectedMemo.title}
             onChange={(e) => handleTitleChange(e.target.value)}
             placeholder="タイトル"
           />
+
+
+
+          <button className="delete-button" onClick={handleDeleteMemo}>
+            削除
+          </button>
+         </div>
 
           <textarea
             className="content-input"

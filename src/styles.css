@@ -141,3 +141,24 @@ body {
 .new-button:hover {
   opacity: 0.9;
 }
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.delete-button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  opacity: 0.9;
+}
+
