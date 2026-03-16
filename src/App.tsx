@@ -1,9 +1,17 @@
 import { useMemo, useState } from "react"
 import { sampleMemos } from "./data/sampleMemos"
+import { loadMemos, saveMemos } from "./utils/storage"
+import { useEffect } from "react"
 
 function App() {
-  const [memos, setMemos] = useState(sampleMemos)
+  const [memos, setMemos] = useState(() => {
+  return loadMemos() ?? sampleMemos
+})
   const [selectedMemoId, setSelectedMemoId] = useState(sampleMemos[0].id)
+
+  useEffect(() => {
+  saveMemos(memos)
+}, [memos])
 
   const selectedMemo = useMemo(() => {
     return memos.find((memo) => memo.id === selectedMemoId) ?? memos[0]
