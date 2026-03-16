@@ -1,5 +1,6 @@
 node_modules/
 dist/
+
 .vscode/
 .idea/
 .DS_Store
@@ -15,3 +16,6 @@ pnpm-debug.log*
 
 coverage/
 *.tsbuildinfo
+
+# Tauri / Rust
+src-tauri/target/
