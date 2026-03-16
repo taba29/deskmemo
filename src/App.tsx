@@ -29,6 +29,19 @@ function App() {
     )
   }
 
+  const handleCreateMemo = () => {
+    const newMemo = {
+      id: crypto.randomUUID(),
+      title: "新しいメモ",
+      content: "",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+
+    setMemos((prev) => [newMemo, ...prev])
+    setSelectedMemoId(newMemo.id)
+  }
+
   if (!selectedMemo) {
     return <div>メモがありません</div>
   }
@@ -36,7 +49,12 @@ function App() {
   return (
     <div className="app">
       <aside className="sidebar">
-        <h1 className="app-title">DeskMemo</h1>
+        <div className="sidebar-header">
+          <h1 className="app-title">DeskMemo</h1>
+          <button className="new-button" onClick={handleCreateMemo}>
+            + 新規
+          </button>
+        </div>
 
         <ul className="memo-list">
           {memos.map((memo) => (

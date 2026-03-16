@@ -118,3 +118,26 @@ body {
   line-height: 1.6;
   background: transparent;
 }
+
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.new-button {
+  border: none;
+  background: #4f46e5;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.new-button:hover {
+  opacity: 0.9;
+}
