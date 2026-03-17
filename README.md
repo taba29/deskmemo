@@ -31,6 +31,29 @@ You can download the desktop app from GitHub Releases:
 
 ---
 
+🍎 macOS
+DESKMEMO_*.dmg をダウンロード
+ダブルクリックで開く
+DESKMEMO.app を Applications フォルダにドラッグ
+Applications から起動
+
+⚠️ 初回起動できない場合
+macOSのセキュリティによりブロックされることがあります。
+アプリを右クリック →「開く」→「開く」
+またはターミナルで：
+```bash
+xattr -dr com.apple.quarantine /Applications/DESKMEMO.app
+```
+
+🪟 Windows
+DESKMEMO_*.exe をダウンロード
+ダブルクリック
+インストーラーに従ってインストール
+🧠 Note
+macOS → .dmg を使用してください
+Windows → .exe を使用してください
+.tar.gz / .msi は上級者・特殊用途向けです
+
 ## 🚀 Getting Started (Development)
 
 ```bash
